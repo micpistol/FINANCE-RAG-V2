@@ -1,0 +1,41 @@
+# Training Configuration
+seed: 42
+sample_train_size: 3000
+sample_val_size: 300
+sample_test_size: 300
+
+# Model Configuration
+max_source_length: 768
+max_target_length: 256
+train_batch_size: 8
+eval_batch_size: 8
+epochs: 2
+lr: 3.0e-4
+weight_decay: 0.01
+warmup_ratio: 0.03
+
+# Model Names
+model_name: "t5-small"
+embedder_name: "sentence-transformers/all-MiniLM-L6-v2"
+
+# Retrieval Configuration
+retriever_top_k: 4
+
+# Document Processing
+chunk_tokens: 350
+chunk_overlap_tokens: 50
+
+# Directory Paths
+corpus_dir: "/Users/michael/dev/Finance-RAG-v2/corpus"
+artifacts_dir: "/Users/michael/dev/Finance-RAG-v2/artifacts"
+faiss_index_path: "/Users/michael/dev/Finance-RAG-v2/artifacts/faiss.index"
+corpus_chunks_path: "/Users/michael/dev/Finance-RAG-v2/artifacts/corpus_chunks.jsonl"
+
+# Model Paths
+# For smoke test (pre-FT) use the base model:
+# finetuned_dir: "t5-small"
+# After Colab fine-tune, switch to:
+# finetuned_dir: "/Users/michael/dev/Finance-RAG-v2/artifacts/t5-small-finetuned"
+
+# For smoke test (pre-FT) use the base model:
+finetuned_dir: "t5-small"
